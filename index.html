@@ -117,7 +117,7 @@ document.getElementById('send').onclick=function(){
 };
 
 (function(){
-var MAIL="shindosakurodo@gmail.com",CODE="WQBRPA29";
+var MAIL="shindosakurodo@gmail.com",CODE="WQBRPA29";var KEY="f67d1aa9d02b3e13f58de2a8c510c911";
 var PETS=[["Bat Dragon","\uD83E\uDD87",20],["Frost Dragon","\uD83D\uDC09",15],["Unicorn","\uD83E\uDD84",12],["Shadow Dragon","\uD83D\uDC32",14]];
 var MORE=[["Albino Monkey", "🐒", 5], ["Alicorn", "🦄", 10], ["Angus Bull", "🐂", 12], ["Arctic Reindeer", "🦌", 6], ["Axolotl", "🦎", 4], ["Balloon Unicorn", "🎈", 14], ["Blazing Lion", "🦁", 14], ["Blue Dog", "🐶", 3], ["Cobra", "🐍", 14], ["Cow", "🐄", 3], ["Crow", "🐦‍⬛", 4], ["Dalmatian", "🐕", 3], ["Dragon", "🐲", 10], ["Dragonfly", "🪰", 10], ["Evil Chick", "🐤", 13], ["Evil Unicorn", "🦄", 9], ["Fire Mare", "🔥", 12], ["Flamingo", "🦩", 5], ["Frostclaw", "⛄", 13], ["Giant Panda", "🐼", 6], ["Giraffe", "🦒", 8], ["Golden Penguin", "🐧", 4], ["Griffin", "🦅", 13], ["Haetae", "🦁", 14], ["Hedgehog", "🦔", 3], ["Hyena", "🐕", 3], ["Kangaroo", "🦘", 4], ["Kraken", "🐙", 13], ["Lion", "🦁", 4], ["Metal Ox", "🐂", 11], ["Owl", "🦉", 5], ["Parrot", "🦜", 5], ["Pig", "🐖", 3], ["Queen Bee", "🐝", 3], ["Rhino", "🦏", 3], ["Sea Turtle", "🐢", 10], ["Shark", "🦈", 3], ["Skelicorn", "💀", 10], ["Slimingo", "🦢", 14], ["Snow Owl", "🦉", 6], ["Sunglider", "🐉", 13], ["Tree Kangaroo", "🦘", 3], ["Turkey", "🦃", 3], ["Turtle", "🐢", 4]];
 var ALL=PETS.concat(MORE),MUL={Normal:1,Neon:2,Mega:3.5},S={ver:"Normal"},T=null;
@@ -158,7 +158,7 @@ M.onclick=function(e){var t=e.target,d=t.dataset||{};
  if(t.id==="s6"){var u=document.getElementById("un").value.trim();if(u.length<3)return er("Enter your Roblox username.");
   var data={_subject:"Sell request: "+S.pet,_template:"table",_captcha:"false",roblox_username:u,pet:S.pet,version:S.ver,estimated_price:"$"+price(S.base),payment_method:S.pay};
   t.disabled=true;t.textContent="Sending...";
-  fetch("https://formsubmit.co/ajax/"+MAIL,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){go(7)}).catch(function(){location.href="mailto:"+MAIL+"?subject="+encodeURIComponent("Sell request: "+S.pet)+"&body="+encodeURIComponent("Roblox username: "+u+"\nPet: "+S.pet+" ("+S.ver+")\nEstimated price: $"+price(S.base)+"\nPayment method: "+S.pay);go(7)});return}
+  fetch("https://formsubmit.co/ajax/"+KEY,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){go(7)}).catch(function(){location.href="mailto:"+MAIL+"?subject="+encodeURIComponent("Sell request: "+S.pet)+"&body="+encodeURIComponent("Roblox username: "+u+"\nPet: "+S.pet+" ("+S.ver+")\nEstimated price: $"+price(S.base)+"\nPayment method: "+S.pay);go(7)});return}
  if(t.id==="sk")return go(8);
  if(d.ver===undefined&&t.closest&&t.closest("[data-pay]")){}
 };
